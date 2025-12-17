@@ -1,0 +1,61 @@
+@import "tailwindcss";
+*{
+  transition: background 0.3s ease-in-out;
+}
+:root {
+  --background: #c3c3c3;
+  --foreground: #000000;
+
+  --color-primary: #c3c3c3;
+  --color-secondary: #d0d0d0;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #333333;
+}
+.dark {
+  --background: #1b1b1b;
+  --foreground: #ffffff;
+
+  --color-primary: #c3c3c3;
+  --color-secondary: #2b2b2b;
+  --color-text-primary: #333333;
+  --color-text-secondary: #ffffff;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --font-sans: var(--font-irish-grover);
+  --font-mono: var(--font-geist-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), var(--font-mono), sans-serif;
+}
+.landing-section {
+  background: var(--background);
+  z-index: 0;
+}
+.bg-img {
+  background: transparent url(./../public/landpage-bg.webp) no-repeat center center / cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: -1;
+  filter: brightness(0.85) blur(1px);
+}
+.text-stroke {
+  -webkit-text-stroke: 0.2px black;
+}
+.page-title::after {
+  margin-left: 10px;
+  content: "2.0";
+  font-size: 0.3em;
+}
