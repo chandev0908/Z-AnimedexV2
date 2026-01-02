@@ -58,8 +58,8 @@ export function AnimeCard({ anime }: AnimeCardProps) {
     >
       <Link href={`/anime/${anime.mal_id}`} className="block relative">
         <div
-          className={`bg-white rounded-lg overflow-hidden cursor-pointer flex flex-col h-80 transition-all duration-300 origin-center ${
-            isHovered ? "shadow-2xl scale-110 z-50 relative" : "shadow-md hover:shadow-xl"
+          className={`bg-white rounded-lg overflow-hidden cursor-pointer flex flex-col h-80 transition-all duration-300 ease-in origin-center ${
+            isHovered ? "shadow-2xl scale-105 z-50 relative" : "shadow-md hover:shadow-xl"
           }`}
         >
           {showTrailer && trailerSrc ? (
