@@ -57,7 +57,7 @@ export const animeService = {
   // ✅ Get anime by ID
   getAnimeById: async (id: number) => {
     return await rateLimitedFetch(
-      `${JIKAN_BASE_URL}/anime/${id}/full`
+      `${JIKAN_BASE_URL}/anime/${id}`
     );
   },
 
