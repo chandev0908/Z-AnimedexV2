@@ -33,14 +33,12 @@ export default function Home() {
             }}
           >
             {!icon ? (
-              <div className="flex flex-col justify-items-center items-center">
+              <div className="flex flex-col justify-items-center items-center bg-white/30 backdrop-blur border border-black rounded-full p-2">
                 <IoMoon className="text-4xl text-foreground" />
-                <p className="text-xs">Light Mode</p>
               </div>
             ) : (
-              <div className="flex flex-col justify-items-center items-center">
+              <div className="flex flex-col justify-items-center items-center bg-black/30 backdrop-blur border border-white rounded-full p-2">
                 <FaSun className="text-4xl text-foreground" />
-                <p className="text-xs">Dark Mode</p>
               </div>
             )}
           </button>
@@ -50,9 +48,7 @@ export default function Home() {
               Z-Animedex
             </h1>
           </div>
-          <SearchBar
-            onSearch={(query) => console.log("Searching for:", query)}
-          />
+          <SearchBar />
           <div className="floating-scroll-down flex flex-col items-center text-white absolute bottom-10 animate-bounce">
             <p className="font-sans text-stroke">
               Scroll Down To Check Latest Anime
