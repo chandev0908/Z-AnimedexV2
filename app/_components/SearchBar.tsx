@@ -2,23 +2,19 @@
 
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-interface SearchBarProps {
-  onSearch: (query: string) => void;
-}
 
-const SearchBar = ({ onSearch }: SearchBarProps) => {
+const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSearch(searchQuery);
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="w-90 max-w-sm md:w-full md:max-w-3xl mx-auto">
+    <form
+      action={"/search"}
+      className="w-90 max-w-sm md:w-full md:max-w-3xl mx-auto"
+    >
       <div className="relative flex items-center relative">
         <input
           type="text"
+          name="query"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search your favorite Anime"
