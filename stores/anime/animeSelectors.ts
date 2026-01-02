@@ -1,3 +1,4 @@
+"use client";
 import { useAnimeStore } from "./useAnimeStore";
 import { useShallow } from "zustand/react/shallow";
 
