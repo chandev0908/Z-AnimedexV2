@@ -1,19 +1,20 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { FaSearch, FaTimes } from "react-icons/fa";
-
 const HeadNav = () => {
   const [open, setOpen] = useState(false);
   return (
     <nav className="@container sticky top-0 w-full h-16 bg-secondary font-sans flex items-center px-4 shadow-md z-100">
       <div className="content w-full max-w-7xl flex justify-between items-center mx-auto">
-        <p className="text-xl font-bold">Z-Animedex</p>
+        <Link className="text-3xl font-bold" href={"/"}>Z-Animedex</Link>
         <form
-          action=""
+          action="/search"
           className="hidden md:flex relative flex items-center relative"
         >
           <input
             type="text"
+            name="query"
             placeholder="Search your favorite Anime"
             className="rounded-lg py-2 px-2 text-text-primary w-md font-sans text-sm focus:outline-none focus:ring-2 focus:ring-black bg-foreground [&::placeholder]:font-sans [&::placeholder]:text-text-primary"
           />
@@ -55,11 +56,14 @@ const HeadNav = () => {
               </button>
 
               {/* Search input */}
-              <input
-                type="text"
-                placeholder="Search your favorite Anime"
-                className="w-full border border-gray-300 rounded-md p-3 focus:outline-none bg-text-primary"
-              />
+              <form action="/search">
+                <input
+                  type="text"
+                  name="query"
+                  placeholder="Search your favorite Anime"
+                  className="w-full border border-gray-300 rounded-md p-3 focus:outline-none bg-text-primary"
+                />
+              </form>
             </div>
           </div>
         )}
