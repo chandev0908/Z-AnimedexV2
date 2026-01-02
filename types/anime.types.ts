@@ -1,13 +1,9 @@
+// types/anime.types.ts
 export interface Anime {
   mal_id: number;
   title: string;
   title_english: string | null;
   title_japanese: string | null;
-  trailer: {
-    youtube_id: "string";
-    url: "string";
-    embed_url: "string";
-  };
   images: {
     jpg: {
       image_url: string;
@@ -15,14 +11,26 @@ export interface Anime {
       large_image_url: string;
     };
   };
+  trailer: {
+    youtube_id: string | null;
+    url: string | null;
+    embed_url: string | null;
+    images: {
+      image_url: string | null;
+      small_image_url: string | null;
+      medium_image_url: string | null;
+      large_image_url: string | null;
+      maximum_image_url: string | null;
+    };
+  } | null;
   score: number | null;
   scored_by: number | null;
   rank: number | null;
   popularity: number | null;
   synopsis: string | null;
-  type: string; // TV, Movie, OVA, etc.
+  type: string;
   episodes: number | null;
-  status: string; // Airing, Finished, etc.
+  status: string;
   aired: {
     from: string;
     to: string | null;
