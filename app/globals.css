@@ -1,7 +1,4 @@
 @import "tailwindcss";
-*{
-  transition: background 0.3s ease-in-out;
-}
 :root {
   --background: #c3c3c3;
   --foreground: #000000;
@@ -41,7 +38,8 @@ body {
   z-index: 0;
 }
 .bg-img {
-  background: transparent url(./../public/landpage-bg.webp) no-repeat center center / cover;
+  background: transparent url(./../public/landpage-bg.webp) no-repeat center
+    center / cover;
   width: 100%;
   height: 100%;
   position: absolute;
